@@ -26,7 +26,7 @@ void ListWidget::move(QListWidget* lw1, QListWidget* lw2){
         return;
     }
     for(auto i : lw1->selectedItems()){
-        lw2->addItem(new QListWidgetItem(*i));
+        lw2->addItem(i->clone());
     }
     qDeleteAll(lw1->selectedItems());
 }
